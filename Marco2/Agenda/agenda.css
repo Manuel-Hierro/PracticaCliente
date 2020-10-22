@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+html {}
+
+body {
+    background-color: rgb(183, 203, 255);
+}
+
+.titulo {
+    margin-top: 10px;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 35px 0px 35px 0px;
+    -moz-border-radius: 35px 0px 35px 0px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    border: 2px solid #5878ca;
+}
+
+.contenedor {}
+
+#cabecera {
+    border-radius: 35px 0px 35px 0px;
+    -moz-border-radius: 35px 0px 35px 0px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    
+    -webkit-box-shadow: 0px 5px 10px 10px rgba(28, 64, 155, 0.6);
+    -moz-box-shadow: 0px 5px 10px 10px rgba(28, 64, 155, 0.6);
+    box-shadow: 0px 5px 10px 10px rgba(28, 64, 155, 0.6);
+}
+
+#centro {
+    -webkit-box-shadow: 0px 5px 10px 5px rgba(28, 64, 155, 0.6);
+    -moz-box-shadow: 0px 5px 10px 5px rgba(28, 64, 155, 0.6);
+    box-shadow: 0px 5px 10px 5px rgba(28, 64, 155, 0.6);
+}
+
+#pie {
+    -webkit-box-shadow: 0px 5px 10px 10px rgba(28, 64, 155, 0.6);
+    -moz-box-shadow: 0px 5px 10px 10px rgba(28, 64, 155, 0.6);
+    box-shadow: 0px 5px 10px 10px rgba(28, 64, 155, 0.6);
+}
+
+.registros {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.registros_contenedor {
+    margin: auto;
+}
+
+#registros {
+    margin: auto;
+}
+
+.mostrar {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.mostrar_contenedor {
+    margin: 0 0 0 20px;
+}
+
+.edicion_form {
+    padding: 20px;
+    border-radius: 35px 0px 35px 0px;
+    -moz-border-radius: 35px 0px 35px 0px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    border: 2px solid #5878ca;
+}
+
+/*----------- CAJA ----------- */
+.recuadro {
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    color: #ffffff;
+    height: 300px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    background: #ffffff;
+    margin: 0 0 25px;
+    overflow: auto;
+    padding: 20px;
+    border-radius: 35px 0px 35px 0px;
+    -moz-border-radius: 35px 0px 35px 0px;
+    -webkit-border-radius: 35px 35px 35px 35px;
+    border: 2px solid #5878ca;
+}
+
+.recuadro::-webkit-scrollbar {
+    width: 8px;
+    /* Tamaño del scroll en vertical */
+    height: 8px;
+    /* Tamaño del scroll en horizontal */
+    display: none;
+    /* Ocultar scroll */
+}
+
+/************************************************************************************/

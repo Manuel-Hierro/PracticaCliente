@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Practica" />
+    <meta name="keywords" content="Practica" />
+    <meta name="author" content="Manuel Hierro" />
+
+    <!-- Bootstrap 4.3 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <!-- Titulo Interno del Documento (Pestaña del Navegador) -->
+    <title>Practica de Cliente</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="agenda.css">
+
+    <!-- JavaScript -->
+    <script defer src="agenda.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body onload="defaultContactos();actualizarRegistos();">
+
+    <div class="container contenedor">
+        <h1 class="titulo">Agenda de Contactos</h1>
+        <div id="cabecera" class="row">
+
+            <div class="registros col-6">
+                <h1 class="titulo">Registros:</h1>
+                <hr>
+                <div class="row registros_contenedor">
+                    <button class="btn btn-dark col-2 mr-2" type="button" onclick="moverRegistro('≪');">≪</button>
+                    <button class="btn btn-dark col-2 mr-2" type="button" onclick="moverRegistro('🡠');">🡠</button>
+                    <span class="font-weight-bolder col-2" id="registros">0 de 0</span>
+                    <button class="btn btn-dark col-2 mr-2" type="button" onclick="moverRegistro('🡢');">🡢</button>
+                    <button class="btn btn-dark col-2 mr-2" type="button" onclick="moverRegistro('≫');">≫</button>
+                </div>
+            </div>
+
+            <div class="mostrar col-6">
+                <h1 class="titulo">Mostrar:</h1>
+                <hr>
+                <div class="mostrar_contenedor row">
+                    <label class="font-weight-bolder col-3 mr-2">Nº Entrada</label>
+                    <input class="form-control col-4 mr-2" type="number" id="ver" value="0" min="0" max="" pattern="^[0-9]+">
+                    <button class="btn btn-dark col-2 mr-2" type="button" onclick="seleccionarContacto();">Ver</button>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <div class="edicion">
+            <h1 class="titulo">Edicion: </h1>
+            <hr>
+            <form id="centro" class="edicion_form" action="#" method="post">
+                <div class="form-group row">
+                    <label class="font-weight-bolder col-3">Nombre:</label>
+                    <input class="form-control w-50" type="text" id="nombre" placeholder="solo letras - Formato Correcto" />
+                </div>
+                <div class="form-group row">
+                    <label class="font-weight-bolder col-3">Apellidos:</label>
+                    <input class="form-control w-50" type="text" id="apellidos" placeholder="solo letras - Formato Correcto" />
+                </div>
+                <div class="form-group row">
+                    <label class="font-weight-bolder col-3">Telefono:</label>
+                    <input class="form-control w-50" type="text" id="telefono" placeholder="xxx-xxxxxx o bien xxxxxxxxx - Formato Correcto" />
+                </div>
+                <div class="form-group row">
+                    <label class="font-weight-bolder col-3">F. Nacimiento:</label>
+                    <input class="form-control w-50" type="text" id="fecha" placeholder="dd/mm/aaaa - Formato Correcto" />
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-success" type="button" id="guardar" onclick="guardarContacto();">Guardar</button>
+                    <button class="btn btn-dark" type="button" id="nuevo" onclick="nuevoContacto();">Nuevo</button>
+                    <button class="btn btn-danger" type="button" id="eliminar" onclick="eliminarContacto();">Eliminar</button>
+                </div>
+            </form>
+        </div>
+        <div class="resumen">
+            <h1 class="titulo">Resumen:</h1>
+            <hr>
+            <div id="pie" class="recuadro">
+                <table class="table" id="miTabla">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">F. Nacimiento</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <!--
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>.......</td>
+                            <td>.......</td>
+                            <td>.......</td>
+                            <td>.......</td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------->
+</body>
+
+</html>

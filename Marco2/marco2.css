@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Kanit:100,700");
+body {
+  font-family: "Kanit", sans-serif;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.effect1 {
+  position: absolute;
+  margin: 0;
+  top: 40%;
+  font-size: 2.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 3;
+  color: rgb(0, 0, 0);
+}
+
+.effect1 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.text {
+  position: absolute;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: rgb(0, 0, 0);
+  font-weight: 100;
+  font-weight: bold;
+  top: 50%;
+  z-index: 3;
+  opacity: 0;
+  top: 50%;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+}
+
+.item {
+  background-color: #F4E0E1;
+  height: 100vh;
+  z-index: 0;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fbf3f3;
+  width: 100%;
+  height: 40px;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  font-family: "Kanit", sans-serif;
+}
+footer p {
+  color: #F6A9BD;
+  letter-spacing: 5px;
+  padding: 5px;
+}
+footer a {
+  color: #F0386B;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+footer a:hover {
+  background: #F6A9BD;
+  transition: all .3s ease;
+  color: #FFFFFF;
+}

@@ -1,2 +1,2 @@
 # PracticaCliente
-Calculadora y Agenda
+Calculadora y Agenda en JavaScript
